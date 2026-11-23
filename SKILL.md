@@ -75,6 +75,27 @@ When drafting:
   and asks, not query plans; an on-call engineer gets the runbook-relevant
   specifics.
 
+## Analogies — judge by the point, not the audience
+
+An analogy earns its place when the *point itself* is conceptually
+non-obvious — a subtlety or counter-intuitive dynamic that someone fluent in
+the domain's vocabulary would still have to stop and think through. It does
+**not** earn its place just because the audience lacks jargon; use the
+correct technical term for that instead, don't dress up ordinary information
+in a metaphor.
+
+Example: "a caught-up task's steady-state throughput tells you nothing about
+its ceiling — like reading a car's top speed off its cruising speed on a
+60mph road" is worth including even for an expert team, because the insight
+(you can't observe a capacity ceiling from steady-state behavior) is
+non-obvious regardless of how deep their domain knowledge is. "Gzip
+compresses data" does not need an analogy for that same audience — they
+already have the term, and the fact isn't surprising.
+
+When one is warranted: pick exactly one, grounded in something ordinary (not
+a stack of clever comparisons), sized to carry the specific non-obvious
+insight — not to decorate a point that was already clear without it.
+
 ## Then publish
 
 Follow this session's normal Notion / Artifact conventions for where the doc
