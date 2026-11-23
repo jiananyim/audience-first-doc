@@ -6,10 +6,10 @@ description: >
   manager, a channel, "the team", an on-call handoff, etc.) — including when
   the user says things like "write a doc for this", "put this in Notion", or
   "summarize this for the team", or pastes a Slack thread and asks for a
-  summary doc. Does NOT apply to a
-  quick answer in chat, or to a plan/analysis the user asked for only for
-  themselves. Forces audience identification before drafting, and bans
-  chronological "what I did / what I found" narration in the output.
+  summary doc. Does NOT apply to a quick answer in chat, or to a
+  plan/analysis the user asked for only for themselves. Forces audience
+  identification before drafting, and bans chronological "what I did / what
+  I found" narration in the output.
 ---
 
 # Audience-first doc writing
@@ -75,38 +75,24 @@ When drafting:
   and asks, not query plans; an on-call engineer gets the runbook-relevant
   specifics.
 
-## Analogies — judge by the point, not the audience
+### Analogies — two narrow uses, otherwise skip
 
-An analogy earns its place when the *point itself* is conceptually
-non-obvious — a subtlety or counter-intuitive dynamic that someone fluent in
-the domain's vocabulary would still have to stop and think through. It does
-**not** earn its place just because the audience lacks jargon; use the
-correct technical term for that instead, don't dress up ordinary information
-in a metaphor.
+Default to no analogy; most docs don't need one. Use one only when:
 
-Example: "a caught-up task's steady-state throughput tells you nothing about
-its ceiling — like reading a car's top speed off its cruising speed on a
-60mph road" is worth including even for an expert team, because the insight
-(you can't observe a capacity ceiling from steady-state behavior) is
-non-obvious regardless of how deep their domain knowledge is. "Gzip
-compresses data" does not need an analogy for that same audience — they
-already have the term, and the fact isn't surprising.
+- **The point itself is non-obvious**, not just unfamiliar vocabulary — e.g.
+  "a caught-up worker's steady-state throughput hides its real ceiling" is
+  worth illustrating even for domain experts, because the insight holds
+  regardless of their expertise. A fact the audience could just as well hear
+  in plain technical terms ("it compresses the data") doesn't qualify —
+  that's a vocabulary gap, fixed with the correct term, not a metaphor.
+- **Several individually-obvious findings have a non-obvious relationship**
+  — one analogy mapping each finding onto part of a single scene can make
+  that relationship click where a bullet list wouldn't (e.g. mapping
+  headcount, per-worker speed, and per-unit work onto one production line).
 
-When one is warranted: pick exactly one, grounded in something ordinary (not
-a stack of clever comparisons), sized to carry the specific non-obvious
-insight — not to decorate a point that was already clear without it.
-
-A second legitimate reason to use one, even for experts: the doc has several
-separate levers/findings that are each individually obvious, but whose
-*relationship to each other* isn't — one analogy that maps each lever to a
-part of a single concrete scene can make that relationship click in a way a
-bullet list doesn't. Example: "each task is a cook who can only work one step
-of one dish at a time; more partitions is more cooks, a faster instance is a
-faster cook, a lower compression level is a simpler recipe" — none of those
-facts is individually surprising, but holding all three as one picture is
-what lets a reader reason about which lever to pull. Use this sparingly and
-only once per doc — it's a closing/organizing device for multiple findings,
-not a style to sustain across every paragraph.
+Pick exactly one grounded, ordinary scene per doc — never stack comparisons
+— sized only to carry the specific insight, used once as a closing/
+organizing device, not sustained across every paragraph.
 
 ## Then publish
 
