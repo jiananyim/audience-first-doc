@@ -96,6 +96,18 @@ When one is warranted: pick exactly one, grounded in something ordinary (not
 a stack of clever comparisons), sized to carry the specific non-obvious
 insight — not to decorate a point that was already clear without it.
 
+A second legitimate reason to use one, even for experts: the doc has several
+separate levers/findings that are each individually obvious, but whose
+*relationship to each other* isn't — one analogy that maps each lever to a
+part of a single concrete scene can make that relationship click in a way a
+bullet list doesn't. Example: "each task is a cook who can only work one step
+of one dish at a time; more partitions is more cooks, a faster instance is a
+faster cook, a lower compression level is a simpler recipe" — none of those
+facts is individually surprising, but holding all three as one picture is
+what lets a reader reason about which lever to pull. Use this sparingly and
+only once per doc — it's a closing/organizing device for multiple findings,
+not a style to sustain across every paragraph.
+
 ## Then publish
 
 Follow this session's normal Notion / Artifact conventions for where the doc
