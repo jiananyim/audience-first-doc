@@ -98,6 +98,20 @@ conclusion on its own.
   answer. If a convenient benchmark or environment doesn't match production
   conditions, say what the gap is instead of letting the reader assume it
   doesn't exist.
+- Don't flatten every open gap into vague language like "uncertain" or
+  "not sure" — name the specific thing that wasn't done ("haven't profiled
+  per-operation CPU time", "no rebalance event was traced"). Then pick the
+  right weight for it: call it what it is if it's a quick thing nobody got
+  to yet, but call it **pending further investigation** if resolving it
+  actually requires real additional work — don't undersell a real gap as a
+  trivial oversight.
+- Cite evidence so it's reproducible, not just quoted. Name the actual
+  metric/log/query (namespace, dimensions, stat, aggregation) behind a
+  number, not just the number with a vague parenthetical. When the source
+  has no shareable link (e.g. an internal metrics console), give the exact
+  query parameters so someone else could pull the same number themselves —
+  don't fabricate a link that might point to the wrong account, region, or
+  time range.
 
 ### Analogies — two narrow uses, otherwise skip
 
