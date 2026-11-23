@@ -75,6 +75,30 @@ When drafting:
   and asks, not query plans; an on-call engineer gets the runbook-relevant
   specifics.
 
+### Evidence and confidence — don't launder a guess into a fact
+
+Every non-obvious claim needs to show where it came from — the
+metric/log/test that supports it, with the actual numbers — not just the
+conclusion on its own.
+
+- State the measured fact together with its evidence (e.g. "throughput rose
+  ~1.6x — CloudWatch OffsetLag slope, before/after, on the three worst
+  partitions"), not the conclusion alone with no trail back to how it was
+  established.
+- When the *mechanism* behind a measured effect isn't itself directly
+  confirmed — profiled, isolated, or checked against alternative
+  explanations — say so. "Changing X produced effect Y, consistent with Z"
+  is honest; "X happens because Z" is not, unless Z was actually isolated
+  and alternatives were ruled out.
+- State what's still unconfirmed or unknown as its own line; don't quietly
+  drop it to make the doc read more confidently. A real gap in the
+  investigation is useful information for the reader, not something to
+  paper over.
+- Testing only the thing that was easiest to test doesn't make it the
+  answer. If a convenient benchmark or environment doesn't match production
+  conditions, say what the gap is instead of letting the reader assume it
+  doesn't exist.
+
 ### Analogies — two narrow uses, otherwise skip
 
 Default to no analogy; most docs don't need one. Use one only when:
