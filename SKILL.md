@@ -131,6 +131,13 @@ conclusion on its own.
   answer. If a convenient benchmark or environment doesn't match production
   conditions, say what the gap is instead of letting the reader assume it
   doesn't exist.
+- A question worth investigating is not automatically worth writing up. The
+  bar for including a checked side-question isn't "was there a problem" —
+  it's "does this matter enough to the reader's decision, or add enough
+  real complexity to the picture, to earn the space." A cleared side-check
+  that turns out to be low-stakes and adds no real complexity stays out,
+  the same as one that was never asked. A side-check that turns out to
+  matter goes in regardless of how much explanatory complexity it adds.
 - Don't flatten every open gap into vague language like "uncertain" or
   "not sure" — name the specific thing that wasn't done ("haven't profiled
   per-operation CPU time", "no rebalance event was traced"). Then pick the
