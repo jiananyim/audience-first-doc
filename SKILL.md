@@ -59,6 +59,13 @@ of same-level headings — group related ones under a higher-level heading
 (e.g. several open decisions nested under one "Open decisions" heading) so
 the document's overall shape is visible at a glance, not just its parts.
 
+A group heading alone isn't top-down — follow it with a short intro that
+states what relates the items before listing them (this is often exactly
+where the second analogy use above belongs). Don't force every item under
+the heading into one shared frame if it doesn't actually fit one of them;
+say which items share the relationship and which don't, rather than
+stretching the frame to cover something it doesn't explain.
+
 ## Step 3 — Write, banning activity-log style
 
 When drafting:
