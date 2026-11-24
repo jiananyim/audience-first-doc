@@ -77,6 +77,16 @@ that recaps just those, for a reader who only wants the open list — but
 that's a recap layered on top of the logical structure, not a replacement
 for it.
 
+Derive the categories themselves from the actual logical/mathematical shape
+of the problem, not from how many separate threads got investigated. If
+several findings are really sub-cases of one underlying factor (e.g.
+"throughput = quantity × speed", where instance type and compression are
+both just ways of changing speed), nest them under that factor — don't list
+them as peers just because they happened to be explored as separate strands
+of work. Before finalizing a grouping, ask what formula or model the items
+actually satisfy, and let that model (not the order or separateness of the
+investigation) set the hierarchy.
+
 ## Step 3 — Write, banning activity-log style
 
 When drafting:
