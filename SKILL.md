@@ -54,6 +54,11 @@ This becomes the doc's outline — usually 3-6 sections framed as the
 audience's own questions ("What broke", "Why", "What we're doing about it",
 "What we need from you"), not as phases of an investigation.
 
+Once there are more than about 5 sections, don't leave them as a flat list
+of same-level headings — group related ones under a higher-level heading
+(e.g. several open decisions nested under one "Open decisions" heading) so
+the document's overall shape is visible at a glance, not just its parts.
+
 ## Step 3 — Write, banning activity-log style
 
 When drafting:
