@@ -107,6 +107,13 @@ When drafting:
 - Match depth and jargon to the audience from Step 1: a manager gets impact
   and asks, not query plans; an on-call engineer gets the runbook-relevant
   specifics.
+- Avoid the em dash (—) as a sentence connector; it's one of the more
+  recognizable AI-writing tells, and overusing it reads as generated rather
+  than written. Use a period, comma, colon, semicolon, or parentheses
+  instead, picking whichever actually fits the logical relationship (a
+  period for two separate claims, a colon when the second half explains or
+  lists the first). An en dash or hyphen inside a number range (e.g.
+  "27–31M", "12–24h") is unrelated and fine to keep.
 
 ### Evidence and confidence — don't launder a guess into a fact
 
