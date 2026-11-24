@@ -66,6 +66,17 @@ the heading into one shared frame if it doesn't actually fit one of them;
 say which items share the relationship and which don't, rather than
 stretching the frame to cover something it doesn't explain.
 
+Group sections by what the thing *is* (the logical subject — a lever, a
+component, a decision), never by its status (done vs. open, shipped vs.
+not). Status is a label inside the section, not the axis that splits the
+document — otherwise one subject (e.g. "compression") ends up split across
+two unrelated top-level sections depending on which part of it happened to
+ship, which breaks the logical shape for no reason. If the doc has several
+open items worth tracking, add one short summary section at the very end
+that recaps just those, for a reader who only wants the open list — but
+that's a recap layered on top of the logical structure, not a replacement
+for it.
+
 ## Step 3 — Write, banning activity-log style
 
 When drafting:
