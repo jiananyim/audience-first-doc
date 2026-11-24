@@ -145,6 +145,12 @@ conclusion on its own.
   that turns out to be low-stakes and adds no real complexity stays out,
   the same as one that was never asked. A side-check that turns out to
   matter goes in regardless of how much explanatory complexity it adds.
+- A checked, low-stakes finding isn't always silent, though: if it's a
+  question the reader would plausibly ask on their own ("why not just tune
+  X?"), a one-line ruled-out note saves them from redoing the same
+  investigation — put it with other ruled-out options, not as an open item.
+  Reserve this for questions an obvious reader would actually raise; don't
+  manufacture a rebuttal for something nobody would think to ask.
 - Don't flatten every open gap into vague language like "uncertain" or
   "not sure" — name the specific thing that wasn't done ("haven't profiled
   per-operation CPU time", "no rebalance event was traced"). Then pick the
