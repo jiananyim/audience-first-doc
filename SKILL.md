@@ -151,6 +151,11 @@ conclusion on its own.
   investigation — put it with other ruled-out options, not as an open item.
   Reserve this for questions an obvious reader would actually raise; don't
   manufacture a rebuttal for something nobody would think to ask.
+- A brief dismissal written to justify focusing on one option over sibling
+  options ("the others aren't realistic, because...") makes a claim just
+  like any other, and needs the same evidence bar — not a free pass because
+  it reads as throat-clearing before the real point. If you haven't
+  checked, say that, rather than asserting something sounds obvious.
 - Don't flatten every open gap into vague language like "uncertain" or
   "not sure" — name the specific thing that wasn't done ("haven't profiled
   per-operation CPU time", "no rebalance event was traced"). Then pick the
