@@ -174,6 +174,13 @@ conclusion on its own.
   query parameters so someone else could pull the same number themselves —
   don't fabricate a link that might point to the wrong account, region, or
   time range.
+- When a doc compares multiple options or levers, check cost for all of
+  them, not just the ones where it was easy to quantify. If cost shows up
+  for one option and is silently missing for a sibling, the omission itself
+  reads as "no cost here" even when the truth is just "not checked" — that's
+  misleading by omission, not neutral silence. State the cost angle for
+  every option, even when the honest answer is "direction unclear, hasn't
+  been measured."
 
 ### Analogies — two narrow uses, otherwise skip
 
