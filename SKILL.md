@@ -187,8 +187,22 @@ Default to no analogy; most docs don't need one. Use one only when:
   headcount, per-worker speed, and per-unit work onto one production line).
 
 Pick exactly one grounded, ordinary scene per doc — never stack comparisons
-— sized only to carry the specific insight, used once as a closing/
-organizing device, not sustained across every paragraph.
+— sized only to carry the specific insight. Default to introducing it once,
+as a closing/organizing device, not sustained across every paragraph.
+
+The exception is a doc built around several parallel levers that all map
+onto the same scene (the second case above — e.g. several ways to speed up
+or scale a system, each corresponding to one part of the scene). There,
+reusing the scene once per lever, as that section's opening frame before
+the technical detail, is fine. But every reuse has to carry real
+explanatory weight: map that lever's actual mechanism into the scene's own
+terms, so the analogy does the explaining. Don't just restate the mapping
+as a label and then revert straight to technical prose ("In the kitchen,
+this is hiring more cooks. Each task's ceiling is bound by its own
+partition's produce rate...") — that's decoration, not explanation, and
+reads as forced. If a section's scene-sentence doesn't actually change how
+the mechanism gets explained, cut it rather than padding every section with
+a label-only touch.
 
 ## Then publish
 
