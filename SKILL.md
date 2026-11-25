@@ -94,7 +94,11 @@ When drafting:
 - **Never** narrate the process: no "I investigated...", "I then checked...",
   "turns out I was wrong about X, so I re-checked...", "after running Y I
   found...". The reader does not care about Claude's or the author's path to
-  the answer, only the answer.
+  the answer, only the answer. This includes narrating the doc's own
+  structure or ordering ("covered below in that order, starting with X
+  since it's the smaller change") — that's a drafting decision, not
+  something the reader needs; let the structure speak for itself instead of
+  explaining it.
 - Lead each section with the conclusion, not the method. Evidence/method goes
   in a line or two underneath if it matters to the audience, not as the main
   narrative.
