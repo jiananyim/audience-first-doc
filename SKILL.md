@@ -54,54 +54,43 @@ This becomes the doc's outline — usually 3-6 sections framed as the
 audience's own questions ("What broke", "Why", "What we're doing about it",
 "What we need from you"), not as phases of an investigation.
 
-Once there are more than about 5 sections, don't leave them as a flat list
-of same-level headings — group related ones under a higher-level heading
-(e.g. several open decisions nested under one "Open decisions" heading) so
-the document's overall shape is visible at a glance, not just its parts.
-
-A group heading alone isn't top-down — follow it with a short intro that
-states what relates the items before listing them (this is often exactly
-where the second analogy use above belongs). Don't force every item under
-the heading into one shared frame if it doesn't actually fit one of them;
-say which items share the relationship and which don't, rather than
-stretching the frame to cover something it doesn't explain.
+**Deriving the structure.** Don't organize sections by how the investigation
+happened to unfold — how many separate threads got pulled, or in what order
+they were checked. Instead, find the actual logical or mathematical shape of
+the problem, the formula or model the findings satisfy, and let that set the
+hierarchy. If several findings are really sub-cases of one underlying factor
+(e.g. a system's output is headcount × per-worker speed, and two different
+findings both just change "speed"), nest them under that factor instead of
+listing them as unrelated peers.
 
 Group sections by what the thing *is* (the logical subject — a lever, a
 component, a decision), never by its status (done vs. open, shipped vs.
-not). Status is a label inside the section, not the axis that splits the
-document — otherwise one subject (e.g. "compression") ends up split across
-two unrelated top-level sections depending on which part of it happened to
-ship, which breaks the logical shape for no reason. If the doc has several
-open items worth tracking, add one short summary section at the very end
-that recaps just those, for a reader who only wants the open list — but
-that's a recap layered on top of the logical structure, not a replacement
-for it.
+not). Status is a label inside a section, not the axis that splits the
+document — otherwise one subject ends up split across unrelated top-level
+sections depending on which part of it happened to ship. If there are
+several open items worth tracking, add one short summary section at the end
+that recaps just those: a recap layered on top of the logical structure, not
+a replacement for it.
 
-Derive the categories themselves from the actual logical/mathematical shape
-of the problem, not from how many separate threads got investigated. If
-several findings are really sub-cases of one underlying factor (e.g.
-"throughput = quantity × speed", where instance type and compression are
-both just ways of changing speed), nest them under that factor — don't list
-them as peers just because they happened to be explored as separate strands
-of work. Before finalizing a grouping, ask what formula or model the items
-actually satisfy, and let that model (not the order or separateness of the
-investigation) set the hierarchy.
+Once a section tree has more than about 5 items at one level, group related
+ones under a higher-level heading so the document's overall shape is visible
+at a glance. A group heading alone isn't top-down, though — follow it with a
+short intro that states what relates the items before listing them, and say
+which items share that relationship and which don't, rather than stretching
+one frame to cover something it doesn't actually explain.
 
 ## Step 3 — Write, banning activity-log style
 
-When drafting:
-
 - **Never** narrate the process: no "I investigated...", "I then checked...",
   "turns out I was wrong about X, so I re-checked...", "after running Y I
-  found...". The reader does not care about Claude's or the author's path to
-  the answer, only the answer. This includes narrating the doc's own
-  structure or ordering ("covered below in that order, starting with X
-  since it's the smaller change") — that's a drafting decision, not
-  something the reader needs; let the structure speak for itself instead of
-  explaining it.
-- Lead each section with the conclusion, not the method. Evidence/method goes
-  in a line or two underneath if it matters to the audience, not as the main
-  narrative.
+  found...". This also covers narrating the doc's own structure or ordering
+  ("covered below in that order, starting with X since it's the smaller
+  change") — that's a drafting decision, not something the reader needs. In
+  both cases, the reader does not care about the path to the answer, only
+  the answer; let the structure speak for itself.
+- Lead each section with the conclusion, not the method. Evidence or method
+  goes in a line or two underneath if it matters to the audience, not as the
+  main narrative.
 - Cut anything that was only interesting to the person doing the
   investigation (dead ends, corrected mistakes, tool-by-tool blow-by-blow).
   If a correction changes the final answer, state the final answer — don't
@@ -114,70 +103,58 @@ When drafting:
 - Avoid the em dash (—) as a sentence connector; it's one of the more
   recognizable AI-writing tells, and overusing it reads as generated rather
   than written. Use a period, comma, colon, semicolon, or parentheses
-  instead, picking whichever actually fits the logical relationship (a
-  period for two separate claims, a colon when the second half explains or
-  lists the first). An en dash or hyphen inside a number range (e.g.
-  "27–31M", "12–24h") is unrelated and fine to keep.
+  instead, picking whichever actually fits the logical relationship. An en
+  dash or hyphen inside a number range (e.g. "27–31M", "12–24h") is unrelated
+  and fine to keep.
 
 ### Evidence and confidence — don't launder a guess into a fact
 
-Every non-obvious claim needs to show where it came from — the
-metric/log/test that supports it, with the actual numbers — not just the
-conclusion on its own.
+Every non-obvious claim needs to show where it came from: the metric, log,
+or test that supports it, with the actual numbers.
 
-- State the measured fact together with its evidence (e.g. "throughput rose
-  ~1.6x — CloudWatch OffsetLag slope, before/after, on the three worst
-  partitions"), not the conclusion alone with no trail back to how it was
-  established.
+- State the measured fact together with its evidence, not the conclusion
+  alone with no trail back to how it was established. Cite it so it's
+  reproducible: name the actual metric/log/query (namespace, dimensions,
+  stat, aggregation) behind a number, not just the number with a vague
+  parenthetical. When the source has no shareable link, give the exact
+  query parameters so someone else could pull the same number themselves —
+  don't fabricate a link that might point to the wrong account, region, or
+  time range.
 - When the *mechanism* behind a measured effect isn't itself directly
-  confirmed — profiled, isolated, or checked against alternative
-  explanations — say so. "Changing X produced effect Y, consistent with Z"
-  is honest; "X happens because Z" is not, unless Z was actually isolated
-  and alternatives were ruled out.
+  confirmed, say so. "Changing X produced effect Y, consistent with Z" is
+  honest; "X happens because Z" is not, unless Z was actually isolated and
+  alternatives were ruled out.
 - State what's still unconfirmed or unknown as its own line; don't quietly
-  drop it to make the doc read more confidently. A real gap in the
-  investigation is useful information for the reader, not something to
-  paper over.
+  drop it to make the doc read more confidently. Name the specific thing
+  that wasn't done ("haven't profiled per-operation CPU time"), not vague
+  language like "uncertain." Then weight it correctly: call it a quick thing
+  nobody got to yet, or **pending further investigation** if resolving it
+  actually requires real additional work — don't undersell a real gap as a
+  trivial oversight.
 - Testing only the thing that was easiest to test doesn't make it the
   answer. If a convenient benchmark or environment doesn't match production
   conditions, say what the gap is instead of letting the reader assume it
   doesn't exist.
 - A question worth investigating is not automatically worth writing up. The
-  bar for including a checked side-question isn't "was there a problem" —
-  it's "does this matter enough to the reader's decision, or add enough
-  real complexity to the picture, to earn the space." A cleared side-check
-  that turns out to be low-stakes and adds no real complexity stays out,
-  the same as one that was never asked. A side-check that turns out to
-  matter goes in regardless of how much explanatory complexity it adds.
-- A checked, low-stakes finding isn't always silent, though: if it's a
-  question the reader would plausibly ask on their own ("why not just tune
-  X?"), a one-line ruled-out note saves them from redoing the same
-  investigation — put it with other ruled-out options, not as an open item.
-  Reserve this for questions an obvious reader would actually raise; don't
-  manufacture a rebuttal for something nobody would think to ask.
-- A brief dismissal written to justify focusing on one option over sibling
-  options ("the others aren't realistic, because...") makes a claim just
-  like any other, and needs the same evidence bar — not a free pass because
-  it reads as throat-clearing before the real point. If you haven't
-  checked, say that, rather than asserting something sounds obvious.
-- Don't flatten every open gap into vague language like "uncertain" or
-  "not sure" — name the specific thing that wasn't done ("haven't profiled
-  per-operation CPU time", "no rebalance event was traced"). Then pick the
-  right weight for it: call it what it is if it's a quick thing nobody got
-  to yet, but call it **pending further investigation** if resolving it
-  actually requires real additional work — don't undersell a real gap as a
-  trivial oversight.
-- Cite evidence so it's reproducible, not just quoted. Name the actual
-  metric/log/query (namespace, dimensions, stat, aggregation) behind a
-  number, not just the number with a vague parenthetical. When the source
-  has no shareable link (e.g. an internal metrics console), give the exact
-  query parameters so someone else could pull the same number themselves —
-  don't fabricate a link that might point to the wrong account, region, or
-  time range.
+  bar for including a checked side-question is "does this matter enough to
+  the reader's decision, or add enough real complexity, to earn the space,"
+  not "was there a problem to check." A side-check that turns out low-stakes
+  and adds no real complexity stays out, same as one never asked; one that
+  turns out to matter goes in regardless of how much complexity it adds. The
+  exception: a cleared side-check that a reader would plausibly ask about on
+  their own ("why not just tune X?") earns a one-line ruled-out note, placed
+  with other ruled-out options rather than as an open item — reserve this
+  for questions an obvious reader would actually raise, not a manufactured
+  rebuttal nobody would think to ask.
+- A brief dismissal used to justify focusing on one option over sibling
+  options ("the others aren't realistic, because...") makes a claim like any
+  other and needs the same evidence bar, not a free pass because it reads as
+  throat-clearing. If it wasn't checked, say that, rather than asserting
+  something sounds obvious.
 - When a doc compares multiple options or levers, check cost for all of
   them, not just the ones where it was easy to quantify. If cost shows up
   for one option and is silently missing for a sibling, the omission itself
-  reads as "no cost here" even when the truth is just "not checked" — that's
+  reads as "no cost here" even when the truth is "not checked" — that's
   misleading by omission, not neutral silence. State the cost angle for
   every option, even when the honest answer is "direction unclear, hasn't
   been measured."
@@ -186,12 +163,11 @@ conclusion on its own.
 
 Default to no analogy; most docs don't need one. Use one only when:
 
-- **The point itself is non-obvious**, not just unfamiliar vocabulary — e.g.
-  "a caught-up worker's steady-state throughput hides its real ceiling" is
-  worth illustrating even for domain experts, because the insight holds
-  regardless of their expertise. A fact the audience could just as well hear
-  in plain technical terms ("it compresses the data") doesn't qualify —
-  that's a vocabulary gap, fixed with the correct term, not a metaphor.
+- **The point itself is non-obvious**, not just unfamiliar vocabulary — a
+  fact the audience could just as well hear in plain technical terms doesn't
+  qualify; that's a vocabulary gap, fixed with the correct term, not a
+  metaphor. A real candidate is an insight that would still be surprising to
+  an expert in the subject.
 - **Several individually-obvious findings have a non-obvious relationship**
   — one analogy mapping each finding onto part of a single scene can make
   that relationship click where a bullet list wouldn't (e.g. mapping
@@ -199,21 +175,17 @@ Default to no analogy; most docs don't need one. Use one only when:
 
 Pick exactly one grounded, ordinary scene per doc — never stack comparisons
 — sized only to carry the specific insight. Default to introducing it once,
-as a closing/organizing device, not sustained across every paragraph.
+as a closing or organizing device, not sustained across every paragraph.
 
 The exception is a doc built around several parallel levers that all map
-onto the same scene (the second case above — e.g. several ways to speed up
-or scale a system, each corresponding to one part of the scene). There,
-reusing the scene once per lever, as that section's opening frame before
-the technical detail, is fine. But every reuse has to carry real
-explanatory weight: map that lever's actual mechanism into the scene's own
-terms, so the analogy does the explaining. Don't just restate the mapping
-as a label and then revert straight to technical prose ("In the kitchen,
-this is hiring more cooks. Each task's ceiling is bound by its own
-partition's produce rate...") — that's decoration, not explanation, and
-reads as forced. If a section's scene-sentence doesn't actually change how
-the mechanism gets explained, cut it rather than padding every section with
-a label-only touch.
+onto the same scene (the second case above). There, reusing the scene once
+per lever, as that section's opening frame before the technical detail, is
+fine — but every reuse has to carry real explanatory weight: map that
+lever's actual mechanism into the scene's own terms, so the analogy does the
+explaining. Don't just restate the mapping as a label and then revert
+straight to technical prose. A scene-sentence that doesn't actually change
+how the mechanism gets explained is worse than no touch at all: cut it
+rather than padding every section with a label.
 
 ## Then publish
 
